@@ -26,7 +26,7 @@ const WrapForm = ({ label, placeholder, value, onChange, type, condition }) => {
           type={type ? type : null}
         />
 
-        {condition ? <img src={check} /> : null}
+        {condition ? <img src={check} className="iconCheck" /> : null}
       </form>
     </div>
   );
