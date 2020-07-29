@@ -3,8 +3,18 @@ import "./style.scss";
 import logo from "./assets/Logo.png";
 import close from "./assets/close.png";
 import check from "./assets/check.png";
+import lap from "./assets/lap.jpg";
+import { checkPassword } from "./checkpass";
 
-const WrapForm = ({ label, placeholder, value, onChange, type }) => {
+const listExtends = [
+  { label: "About" },
+  { label: "Terms" },
+  { label: "Contact" },
+];
+
+var splChars = !/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g;
+
+const WrapForm = ({ label, placeholder, value, onChange, type, condition }) => {
   return (
     <div>
       <form>
@@ -15,7 +25,8 @@ const WrapForm = ({ label, placeholder, value, onChange, type }) => {
           value={value}
           type={type ? type : null}
         />
-        {value.length > 4 ? <img src={check} /> : null}
+
+        {condition ? <img src={check} /> : null}
       </form>
     </div>
   );
@@ -31,6 +42,7 @@ const Authentication = () => {
 
   const [sigInInput, setSignIn] = useState({ userName: "", password: "" });
 
+  const [selectExtend, setSelectE] = useState(0);
   const singUp = () => {
     return (
       <div className="padding">
@@ -41,13 +53,18 @@ const Authentication = () => {
           onChange={(userName) =>
             setSignUpInput({ ...singUpInput, userName: userName.target.value })
           }
+          condition={singUpInput.userName.length > 4}
         />
         <WrapForm
           label="YOUR EMAIL"
-          placeholder="Type your Username"
+          placeholder="Type your email"
           value={singUpInput.email}
           onChange={(text) =>
             setSignUpInput({ ...singUpInput, email: text.target.value })
+          }
+          condition={
+            singUpInput.email.substr(0, 1) !== "." &&
+            singUpInput.email.indexOf("@gmail.com") != -1
           }
         />
         <WrapForm
@@ -58,18 +75,23 @@ const Authentication = () => {
           onChange={(text) =>
             setSignUpInput({ ...singUpInput, password: text.target.value })
           }
+          condition={checkPassword(singUpInput.password) == true}
         />
         <WrapForm
           label="REPEAT YOUR PASSWORD"
-          placeholder="Type your Username"
+          placeholder="Repeat your password"
           value={singUpInput.repeatPass}
           type="password"
           onChange={(text) =>
             setSignUpInput({ ...singUpInput, repeatPass: text.target.value })
           }
+          condition={
+            singUpInput.repeatPass &&
+            singUpInput.password === singUpInput.repeatPass
+          }
         />
 
-        <button>Sign up</button>
+        <button>SIGN UP</button>
       </div>
     );
   };
@@ -85,6 +107,7 @@ const Authentication = () => {
           onChange={(userName) =>
             setSignIn({ ...sigInInput, userName: userName.target.value })
           }
+          condition={sigInInput.userName.length > 3}
         />
 
         <WrapForm
@@ -95,9 +118,10 @@ const Authentication = () => {
           onChange={(text) =>
             setSignIn({ ...sigInInput, password: text.target.value })
           }
+          condition={checkPassword(sigInInput.password) == true}
         />
 
-        <button>Sign in</button>
+        <button>SIGN IN</button>
       </div>
     );
   };
@@ -106,21 +130,37 @@ const Authentication = () => {
     <div className="fullScreen">
       <div className="containerAuth">
         <div className="selectionAuth">
-          <img src={logo} />
-          <br />
-          <button
-            onClick={() => setFocus(true)}
-            className={focusAuth ? "buttonFocus" : null}
-          >
-            Sing up
-          </button>
+          <div>
+            <img src={logo} />
+            <br />
+            <button
+              onClick={() => setFocus(true)}
+              className={focusAuth ? "buttonFocus" : null}
+            >
+              Sing up
+            </button>
 
-          <button
-            onClick={() => setFocus(false)}
-            className={focusAuth ? null : "buttonFocus"}
-          >
-            Sign in
-          </button>
+            <button
+              onClick={() => setFocus(false)}
+              className={focusAuth ? null : "buttonFocus"}
+            >
+              Sign in
+            </button>
+          </div>
+
+          <div>
+            {listExtends.map((item, index) => {
+              return (
+                <button
+                  key={index}
+                  className={selectExtend == index ? "focus" : "extend"}
+                  onClick={() => setSelectE(index)}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
         <div className="input">
           <div className="header">
