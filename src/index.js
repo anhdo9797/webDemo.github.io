@@ -8,6 +8,7 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import Authentication from "./components/authentication";
+import AuthenticationVer2 from "./components/authenVer2";
 
 export default function App() {
   return (
