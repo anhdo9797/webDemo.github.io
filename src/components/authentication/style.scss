@@ -26,7 +26,7 @@ $DESIGN_HEIGHT: 804px;
     .selectionAuth {
       width: 100%;
       background-color: #323232;
-      padding: 61px;
+      padding: 30px;
       background-image: url("./assets/bg.png");
       height: 30%;
       border-bottom: 2px solid #ffff;
@@ -264,21 +264,19 @@ $DESIGN_HEIGHT: 804px;
 @media screen and (min-width: 1024px) {
   .fullScreen {
     background-color: #2f3436;
-    height: 100vh;
-    min-height: 804px;
     display: flex;
     align-items: center;
     font-family: "Lato", sans-serif;
     letter-spacing: 3px;
     min-width: 1200px;
-    position: relative;
+    padding: 54px 0px 54px 0px;
+    height: 100vh;
   }
 
   .containerAuth {
     width: 1169px;
     height: 697px;
-    margin-top: 54px;
-    margin-bottom: 54px;
+
     margin: auto auto;
     display: flex;
     background-repeat: no-repeat;
