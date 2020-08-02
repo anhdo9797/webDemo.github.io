@@ -7,6 +7,10 @@ import {
   HashRouter,
   BrowserRouter,
 } from "react-router-dom";
+import "antd/dist/antd.css";
+
+
+
 import Authentication from "./components/authentication";
 import AuthenticationVer2 from "./components/authenVer2";
 
