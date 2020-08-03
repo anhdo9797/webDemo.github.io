@@ -10,18 +10,30 @@ const AuthenticationVer2 = ({}) => {
 
   const menu = (
     <Menu
-      mode="inline"
-      style={{ width: 256 }}
+      style={{ width: "70vw", height: "40%" }}
       defaultSelectedKeys={["1"]}
       defaultOpenKeys={["sub1"]}
     >
-      <Menu.Item>
+      <Menu.Item className='menuItem'>
         <a>Home</a>
+      </Menu.Item>
+      <Menu.Item>
         <a>Our Lab</a>
+      </Menu.Item>
+      <Menu.Item>
         <a>Team</a>
+      </Menu.Item>
+      <Menu.Item>
         <a>Case Study</a>
+      </Menu.Item>
+      <Menu.Item>
         <a>Community</a>
+      </Menu.Item>
+      <Menu.Item>
         <a>Support</a>
+      </Menu.Item>
+      <Menu.Item>
+        <a>Register for free</a>
       </Menu.Item>
     </Menu>
   );

@@ -1,34 +1,38 @@
 @media screen and (min-width: 320px) {
-  div .containerAuthV2 {
-    min-width: 100vw;
+  .containerAuthV2 {
+    max-width: 100vw;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
     min-height: 100vh;
-    padding: 41px 30px 56px 48px;
-    font-family: Arial, Helvetica, sans-serif, "Arial Narrow", Arial, sans-serif;
-    letter-spacing: 1px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .menuList {
-      height: 100vh;
-      a {
-        font-size: 18px;
-        font-weight: bold;
-        color: black;
-        margin-right: 13px;
-      }
+    padding: 3vmin;
+
+    button {
+      background-color: #ee4064;
+      color: #ffff;
+      border: none;
+      height: 14vmin;
+      width: 43vmin;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5vmin;
+      font-weight: bold;
+      border-radius: 8vmin;
+      outline: none;
     }
+    button:hover {
+      color: #ee4064;
+      background-color: #ffff;
+      border: 2px solid #ee4064;
+    }
+
     .header {
       width: 100%;
       height: 44px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      a {
-        font-size: 18px;
-        font-weight: bold;
-        color: black;
-        margin-right: 13px;
-      }
       .menu {
         display: none;
       }
@@ -37,63 +41,42 @@
       }
       .iconMenu {
         display: flex;
-        height: 30px;
-        width: 30px;
-        margin: 0px;
-        border: none;
         outline: none;
-
         background-color: transparent;
+        border: none;
+        width: 15vmin;
       }
       img.logo {
+        width: auto;
       }
     }
     .main {
       width: 100%;
       .title {
         h1 {
-          font-size: 40px;
+          font-size: 7vmin;
           font-weight: bold;
-          margin: 20px 0 20px 0;
+          margin: 10vmin 0;
+          color: black;
         }
         h2 {
-          font-size: 17px;
-          margin: 20px 0 20px 0;
+          font-size: 5vmin;
+          color: black;
+          margin: 0;
         }
         .wrapButtons {
+          width: 100%;
           display: flex;
           justify-content: space-between;
-          margin: 20px 0 20px 0;
-          button {
-            background-color: #ee4064;
-            color: #ffff;
-            border: none;
-            height: 44px;
-            width: 45%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-            font-weight: bold;
-            outline: none;
+          margin: 10vmin 0;
 
-            border-radius: 26px;
-          }
-          button:hover {
-            color: #ee4064;
-            background-color: #ffff;
-            border: 2px solid #ee4064;
-          }
           button.outline {
-            color: black;
-            border: 2px solid black;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background-color: #ffff;
+            border: 2px solid black;
+            color: black;
+            margin-left: 16px;
           }
-          button:hover {
+          button.outline:hover {
             color: #ee4064;
             background-color: #ffff;
             border: 2px solid #ee4064;
@@ -102,13 +85,15 @@
       }
       img.image {
         width: 100%;
+        height: auto;
       }
     }
   }
 }
 
-@media screen and (min-width: 1024px) {
-  div .containerAuthV2 {
+//laptop & desktop
+@media only screen and (min-width: 1280px) {
+  .containerAuthV2 {
     min-width: 100vw;
     min-height: 100vh;
     padding: 41px 30px 56px 48px;
@@ -117,7 +102,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    z-index: 1;
     button {
       background-color: #ee4064;
       color: #ffff;
@@ -136,25 +121,7 @@
       background-color: #ffff;
       border: 2px solid #ee4064;
     }
-    button.outline {
-      color: black;
-      border: 2px solid black;
-      height: 44px;
-      width: 158px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 15px;
-      font-weight: bold;
-      border-radius: 26px;
-      background-color: #ffff;
-      margin-left: 16px;
-    }
-    button:hover {
-      color: #ee4064;
-      background-color: #ffff;
-      border: 2px solid #ee4064;
-    }
+
     .header {
       width: 90%;
       height: 44px;
@@ -167,6 +134,9 @@
         color: black;
         margin-right: 13px;
       }
+      a:hover {
+        font-size: 18.5px;
+      }
       .menu {
         display: flex;
       }
@@ -175,6 +145,9 @@
       }
       .iconMenu {
         display: none;
+      }
+      img.logo {
+        width: auto;
       }
     }
     .main {
@@ -194,13 +167,29 @@
           font-size: 50px;
           font-weight: bold;
           margin: 0px;
+          color: black;
         }
         h2 {
           font-size: 18.5px;
-          margin: 0;
+          color: black;
+          margin: 20px 0;
         }
         .wrapButtons {
+          width: 100%;
           display: flex;
+          justify-content: start;
+
+          button.outline {
+            background-color: #ffff;
+            border: 2px solid black;
+            color: black;
+            margin-left: 16px;
+          }
+          button.outline:hover {
+            color: #ee4064;
+            background-color: #ffff;
+            border: 2px solid #ee4064;
+          }
         }
       }
       img.image {
