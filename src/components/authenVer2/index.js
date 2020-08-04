@@ -3,10 +3,23 @@ import "./style.scss";
 import logo from "./assets/logo.png";
 import image from "./assets/image.png";
 import menuIcon from "./assets/menu.png";
-import { Menu, Dropdown, Button } from "antd";
+import { Menu, Dropdown, Button, Drawer, Divider } from "antd";
+
+const navList = [
+  { label: "Home" },
+  { label: "Our Lab" },
+  { label: "Team" },
+  { label: "Case Study" },
+  { label: "Community" },
+  { label: "Support" },
+];
 
 const AuthenticationVer2 = ({}) => {
-  const [showMenu, setShowMenu] = useState(false);
+  const [navFocus, setNavFocus] = useState(0);
+  const [visible, setVisible] = useState(false);
+  const [drawerItem, setDrawer] = useState(0);
+
+  const focusNav = () => {};
 
   const menu = (
     <Menu
@@ -14,7 +27,7 @@ const AuthenticationVer2 = ({}) => {
       defaultSelectedKeys={["1"]}
       defaultOpenKeys={["sub1"]}
     >
-      <Menu.Item className='menuItem'>
+      <Menu.Item className="menuItem">
         <a>Home</a>
       </Menu.Item>
       <Menu.Item>
@@ -39,20 +52,72 @@ const AuthenticationVer2 = ({}) => {
   );
   return (
     <div className="containerAuthV2">
+      <div className="modal"> modal</div>
       <div className="header">
         <img src={logo} className="logo" />
-        <Dropdown overlay={menu}>
+
+        <button className="iconMenu" onClick={() => setVisible(true)}>
           <img src={menuIcon} className="iconMenu" />
-        </Dropdown>
+        </button>
 
         <div className="menu">
-          <a>Home</a>
-          <a>Our Lab</a>
-          <a>Team</a>
-          <a>Case Study</a>
-          <a>Community</a>
-          <a>Support</a>
+          {navList.map((e, i) => (
+            <a key={i}>{e.label}</a>
+          ))}
         </div>
+
+        <Drawer
+          title="Menu"
+          placement="right"
+          closable={false}
+          onClose={() => setVisible(false)}
+          visible={visible}
+        >
+          {navList.map((e, i) => (
+            <div>
+              <button
+                variant="light"
+                style={{
+                  alignItems: "start",
+                  backgroundColor: "white",
+                  color: "black",
+                  justifyContent: "start",
+                  fontSize: 14,
+                  outline: "none",
+                  border: "none",
+                  margin: 0,
+                  height: "6vh",
+                  fontWeight: drawerItem == i ? "bold" : 100,
+                }}
+                onClick={() => {
+                  setVisible(false);
+                  setDrawer(i);
+                }}
+              >
+                {e.label}
+              </button>
+            </div>
+          ))}
+          <button
+            variant="light"
+            style={{
+              alignItems: "start",
+              backgroundColor: "white",
+              color: "#ee4064",
+              justifyContent: "start",
+              fontSize: 14,
+              outline: "none",
+              border: "none",
+              margin: 0,
+              height: "6vh",
+            }}
+            onClick={() => setVisible(false)}
+          >
+            {/* <a style={{ fontSize: 18 }} key={i}> */}
+            Register
+            {/* </a> */}
+          </button>
+        </Drawer>
         <button className="register">Register for free </button>
       </div>
 

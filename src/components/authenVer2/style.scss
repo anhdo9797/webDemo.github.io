@@ -1,3 +1,4 @@
+//mobile
 @media screen and (min-width: 320px) {
   .containerAuthV2 {
     max-width: 100vw;
@@ -11,12 +12,12 @@
       background-color: #ee4064;
       color: #ffff;
       border: none;
-      height: 14vmin;
-      width: 43vmin;
+      height: 7vw;
+      width: 37vw;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 5vmin;
+      font-size: 3vw;
       font-weight: bold;
       border-radius: 8vmin;
       outline: none;
@@ -24,7 +25,7 @@
     button:hover {
       color: #ee4064;
       background-color: #ffff;
-      border: 2px solid #ee4064;
+      border: 1px solid #ee4064;
     }
 
     .header {
@@ -44,7 +45,7 @@
         outline: none;
         background-color: transparent;
         border: none;
-        width: 15vmin;
+        width: 6vw;
       }
       img.logo {
         width: auto;
@@ -72,14 +73,14 @@
 
           button.outline {
             background-color: #ffff;
-            border: 2px solid black;
+            border: 1px solid black;
             color: black;
             margin-left: 16px;
           }
           button.outline:hover {
             color: #ee4064;
             background-color: #ffff;
-            border: 2px solid #ee4064;
+            border: 1px solid #ee4064;
           }
         }
       }
@@ -91,12 +92,104 @@
   }
 }
 
-//laptop & desktop
-@media only screen and (min-width: 1280px) {
+@media screen and (min-width: 600px) {
   .containerAuthV2 {
-    min-width: 100vw;
+    max-width: 100vw;
+    font-family: "Gilroy", sans-serif;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
     min-height: 100vh;
-    padding: 41px 30px 56px 48px;
+    padding: 3vmin;
+
+    button {
+      background-color: #ee4064;
+      color: #ffff;
+      border: none;
+      height: 7vw;
+      width: 37vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3vw;
+      font-weight: bold;
+      border-radius: 8vmin;
+      outline: none;
+    }
+    button:hover {
+      color: #ee4064;
+      background-color: #ffff;
+      border: 1px solid #ee4064;
+    }
+
+    .header {
+      width: 100%;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .menu {
+        display: none;
+      }
+      button.register {
+        display: none;
+      }
+      .iconMenu {
+        display: flex;
+        outline: none;
+        background-color: transparent;
+        border: none;
+        width: 6vw;
+      }
+      img.logo {
+        width: auto;
+      }
+    }
+    .main {
+      width: 100%;
+      .title {
+        h1 {
+          font-size: 7vmin;
+          font-weight: bold;
+          margin: 10vmin 0;
+          color: black;
+        }
+        h2 {
+          font-size: 5vmin;
+          color: black;
+          margin: 0;
+        }
+        .wrapButtons {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          margin: 10vmin 0;
+          padding: 0 2vmin;
+
+          button.outline {
+            background-color: #ffff;
+            border: 1px solid black;
+            color: black;
+          }
+          button.outline:hover {
+            color: #ee4064;
+            background-color: #ffff;
+            border: 1px solid #ee4064;
+          }
+        }
+      }
+      img.image {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .containerAuthV2 {
+    min-width: 100%;
+    min-height: 100vh;
+    padding: 43px 30px 52px 140px;
     font-family: "Gilroy", sans-serif;
     letter-spacing: 1px;
     display: flex;
@@ -119,7 +212,7 @@
     button:hover {
       color: #ee4064;
       background-color: #ffff;
-      border: 2px solid #ee4064;
+      border: 1px solid #ee4064;
     }
 
     .header {
@@ -129,13 +222,16 @@
       align-items: center;
       justify-content: space-between;
       a {
-        font-size: 18px;
+        opacity: 0.6;
+        font-size: 14px;
         font-weight: bold;
         color: black;
         margin-right: 13px;
       }
-      a:hover {
+      a:hover,
+      a.focus {
         text-decoration: underline;
+        opacity: 1;
       }
       .menu {
         display: flex;
@@ -147,7 +243,7 @@
         display: none;
       }
       img.logo {
-        width: auto;
+        width: 109px;
       }
     }
     .main {
@@ -157,22 +253,17 @@
       width: 100%;
       .title {
         width: 484px;
-        height: 436px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        padding: 20px 0px 87px 0px;
 
         h1 {
-          font-size: 64px;
-          font-weight: bold;
-          margin: 0px;
+          font-size: 3.7vmax;
+          margin: 0 0 24px 0;
           color: black;
         }
         h2 {
-          font-size: 18px;
+          font-size: 1.6vmax;
           color: black;
-          margin: 20px 0;
         }
         .wrapButtons {
           width: 100%;
@@ -181,20 +272,129 @@
 
           button.outline {
             background-color: #ffff;
-            border: 2px solid black;
+            border: 1px solid black;
             color: black;
             margin-left: 16px;
           }
           button.outline:hover {
             color: #ee4064;
             background-color: #ffff;
-            border: 2px solid #ee4064;
+            border: 1px solid #ee4064;
+          }
+        }
+      }
+      img.image {
+        width: 40vmax;
+        height: auto;
+      }
+    }
+  }
+}
+
+//laptop & desktop
+@media only screen and (min-width: 1280px) {
+  .containerAuthV2 {
+    min-width: 100%;
+    min-height: 100vh;
+    padding: 43px 30px 52px 140px;
+    font-family: "Gilroy", sans-serif;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    button {
+      background-color: #ee4064;
+      color: #ffff;
+      border: none;
+      height: 44px;
+      width: 158px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 26px;
+    }
+    button:hover {
+      color: #ee4064;
+      background-color: #ffff;
+      border: 1px solid #ee4064;
+    }
+
+    .header {
+      width: 90%;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      a {
+        opacity: 0.6;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        margin-right: 13px;
+      }
+      a:hover,
+      a.focus {
+        text-decoration: underline;
+        opacity: 1;
+      }
+      .menu {
+        display: flex;
+      }
+      button.register {
+        display: flex;
+      }
+      .iconMenu {
+        display: none;
+      }
+      img.logo {
+        width: 109px;
+      }
+    }
+    .main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 100%;
+
+      .title {
+        width: 484px;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          font-size: 64px;
+          margin: 0 0 24px 0;
+          color: black;
+        }
+        h2 {
+          font-size: 18px;
+          color: black;
+        }
+        .wrapButtons {
+          width: 100%;
+          display: flex;
+          justify-content: start;
+
+          button.outline {
+            background-color: #ffff;
+            border: 1px solid black;
+            color: black;
+            margin-left: 16px;
+          }
+          button.outline:hover {
+            color: #ee4064;
+            background-color: #ffff;
+            border: 1px solid #ee4064;
           }
         }
       }
       img.image {
         width: 665px;
         height: 539px;
+        margin-top: 75px;
       }
     }
   }

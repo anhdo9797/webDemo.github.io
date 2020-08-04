@@ -3,52 +3,97 @@ import "./stv2.scss";
 import logo from "./assets/logov2.png";
 import bgv2 from "./assets/bgv2.png";
 import menuIcon from "./assets/menu.png";
-import { Menu, Dropdown, Button } from "antd";
+import { Drawer } from "antd";
+
+const navList = [
+  { label: "Home" },
+  { label: "Our Lab" },
+  { label: "Team" },
+  { label: "Case Study" },
+  { label: "Community" },
+  { label: "Support" },
+];
+
+const MyButton = ({ onClick, label, drawerItem, i }) => {
+  return (
+    <button
+      variant="light"
+      style={{
+        alignItems: "start",
+        backgroundColor: "white",
+        color: "black",
+        justifyContent: "start",
+        fontSize: 14,
+        outline: "none",
+        border: "none",
+        margin: 0,
+        height: "6vh",
+        fontWeight: drawerItem == i ? "bold" : 100,
+      }}
+      onClick={onClick}
+    >
+      {label}
+    </button>
+  );
+};
 
 const AuthenticationVer22 = ({}) => {
-  const [showMenu, setShowMenu] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const [drawerItem, setDrawer] = useState(0);
 
-  const menu = (
-    <Menu
-      style={{ width: "70vw", height: "40%" }}
-      defaultSelectedKeys={["1"]}
-      defaultOpenKeys={["sub1"]}
-    >
-      <Menu.Item className="menuItem">
-        <a>Home</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Our Lab</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Team</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Case Study</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Community</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Support</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Register for free</a>
-      </Menu.Item>
-    </Menu>
-  );
   return (
     <div className="backgroundV22">
       <img src={bgv2} className="imageBg" />
       <div className="containerAuthV22">
         <div className="header">
           <img src={logo} className="logo" />
-          <Dropdown overlay={menu}>
+          <button className="iconMenu" onClick={() => setVisible(true)}>
             <img src={menuIcon} className="iconMenu" />
-          </Dropdown>
+          </button>
+
+          <Drawer
+            title="Menu"
+            placement="right"
+            closable={false}
+            onClose={() => setVisible(false)}
+            visible={visible}
+          >
+            {navList.map((e, i) => (
+              <div>
+                <MyButton
+                  onClick={() => {
+                    setVisible(false);
+                    setDrawer(i);
+                  }}
+                  label={e.label}
+                  drawerItem={drawerItem}
+                  i={i}
+                />
+              </div>
+            ))}
+            <button
+              variant="light"
+              style={{
+                alignItems: "start",
+                backgroundColor: "white",
+                color: "#ee4064",
+                justifyContent: "start",
+                fontSize: 14,
+                outline: "none",
+                border: "none",
+                margin: 0,
+                height: "6vh",
+              }}
+              onClick={() => setVisible(false)}
+            >
+              {/* <a style={{ fontSize: 18 }} key={i}> */}
+              Register
+              {/* </a> */}
+            </button>
+          </Drawer>
 
           <div className="menu">
-            <a>Home</a>
+            <a className="focus">Home</a>
             <a>Our Lab</a>
             <a>Team</a>
             <a>Case Study</a>
