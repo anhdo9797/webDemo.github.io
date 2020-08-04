@@ -3,7 +3,7 @@ import "./style.scss";
 import logo from "./assets/logo.png";
 import image from "./assets/image.png";
 import menuIcon from "./assets/menu.png";
-import { Menu, Dropdown, Button, Drawer, Divider } from "antd";
+import { Drawer } from "antd";
 
 const navList = [
   { label: "Home" },
@@ -15,44 +15,11 @@ const navList = [
 ];
 
 const AuthenticationVer2 = ({}) => {
-  const [navFocus, setNavFocus] = useState(0);
   const [visible, setVisible] = useState(false);
   const [drawerItem, setDrawer] = useState(0);
 
-  const focusNav = () => {};
-
-  const menu = (
-    <Menu
-      style={{ width: "70vw", height: "40%" }}
-      defaultSelectedKeys={["1"]}
-      defaultOpenKeys={["sub1"]}
-    >
-      <Menu.Item className="menuItem">
-        <a>Home</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Our Lab</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Team</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Case Study</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Community</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Support</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a>Register for free</a>
-      </Menu.Item>
-    </Menu>
-  );
   return (
     <div className="containerAuthV2">
-      <div className="modal"> modal</div>
       <div className="header">
         <img src={logo} className="logo" />
 
@@ -87,7 +54,7 @@ const AuthenticationVer2 = ({}) => {
                   border: "none",
                   margin: 0,
                   height: "6vh",
-                  fontWeight: drawerItem == i ? "bold" : 100,
+                  opacity: drawerItem == i ? 1 : 0.3,
                 }}
                 onClick={() => {
                   setVisible(false);
@@ -110,12 +77,11 @@ const AuthenticationVer2 = ({}) => {
               border: "none",
               margin: 0,
               height: "6vh",
+              opacity: 0.5,
             }}
             onClick={() => setVisible(false)}
           >
-            {/* <a style={{ fontSize: 18 }} key={i}> */}
             Register
-            {/* </a> */}
           </button>
         </Drawer>
         <button className="register">Register for free </button>
