@@ -60,15 +60,27 @@ const AuthenticationVer22 = ({}) => {
           >
             {navList.map((e, i) => (
               <div>
-                <MyButton
+                <button
+                  variant="light"
+                  style={{
+                    alignItems: "start",
+                    backgroundColor: "white",
+                    color: "black",
+                    justifyContent: "start",
+                    fontSize: 14,
+                    outline: "none",
+                    border: "none",
+                    margin: 0,
+                    height: "6vh",
+                    opacity: drawerItem == i ? 1 : 0.3,
+                  }}
                   onClick={() => {
                     setVisible(false);
                     setDrawer(i);
                   }}
-                  label={e.label}
-                  drawerItem={drawerItem}
-                  i={i}
-                />
+                >
+                  {e.label}
+                </button>
               </div>
             ))}
             <button
@@ -83,12 +95,11 @@ const AuthenticationVer22 = ({}) => {
                 border: "none",
                 margin: 0,
                 height: "6vh",
+                opacity: 0.5,
               }}
               onClick={() => setVisible(false)}
             >
-              {/* <a style={{ fontSize: 18 }} key={i}> */}
               Register
-              {/* </a> */}
             </button>
           </Drawer>
 
