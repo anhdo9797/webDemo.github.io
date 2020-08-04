@@ -52,27 +52,29 @@ const AuthenticationVer22 = ({}) => {
           </button>
 
           <Drawer
-            title="Menu"
+            title="USER"
             placement="right"
             closable={false}
             onClose={() => setVisible(false)}
             visible={visible}
+            bodyStyle={{ backgroundColor: "#402c5e", padding: 0 }}
           >
             {navList.map((e, i) => (
               <div>
                 <button
                   variant="light"
                   style={{
-                    alignItems: "start",
-                    backgroundColor: "white",
-                    color: "black",
-                    justifyContent: "start",
+                    alignItems: "flex-start",
+                    backgroundColor: "transparent",
+                    color: "white",
+                    justifyContent: "flex-start",
                     fontSize: 14,
                     outline: "none",
                     border: "none",
                     margin: 0,
                     height: "6vh",
-                    opacity: drawerItem == i ? 1 : 0.3,
+                    fontWeight: "bold",
+                    textDecoration: drawerItem == i ? "underline" : "none",
                   }}
                   onClick={() => {
                     setVisible(false);
@@ -83,24 +85,6 @@ const AuthenticationVer22 = ({}) => {
                 </button>
               </div>
             ))}
-            <button
-              variant="light"
-              style={{
-                alignItems: "start",
-                backgroundColor: "white",
-                color: "#ee4064",
-                justifyContent: "start",
-                fontSize: 14,
-                outline: "none",
-                border: "none",
-                margin: 0,
-                height: "6vh",
-                opacity: 0.5,
-              }}
-              onClick={() => setVisible(false)}
-            >
-              Register
-            </button>
           </Drawer>
 
           <div className="menu">

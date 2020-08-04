@@ -250,7 +250,7 @@
     .main {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      // align-items: flex-end;
       width: 100%;
       .title {
         width: 484px;
@@ -335,7 +335,7 @@
         font-size: 14px;
         font-weight: bold;
         color: black;
-        margin-right: 13px;
+        margin-right: 22px;
       }
       a:hover,
       a.focus {
@@ -357,7 +357,7 @@
     .main {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      // align-items: flex-end;
       width: 100%;
 
       .title {

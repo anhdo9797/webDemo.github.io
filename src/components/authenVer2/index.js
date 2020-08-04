@@ -34,7 +34,7 @@ const AuthenticationVer2 = ({}) => {
         </div>
 
         <Drawer
-          title="Menu"
+          title="USER"
           placement="right"
           closable={false}
           onClose={() => setVisible(false)}
@@ -54,7 +54,8 @@ const AuthenticationVer2 = ({}) => {
                   border: "none",
                   margin: 0,
                   height: "6vh",
-                  opacity: drawerItem == i ? 1 : 0.3,
+                  fontWeight: "bold",
+                  textDecoration: drawerItem == i ? "underline" : "none",
                 }}
                 onClick={() => {
                   setVisible(false);
@@ -65,24 +66,6 @@ const AuthenticationVer2 = ({}) => {
               </button>
             </div>
           ))}
-          <button
-            variant="light"
-            style={{
-              alignItems: "start",
-              backgroundColor: "white",
-              color: "#ee4064",
-              justifyContent: "start",
-              fontSize: 14,
-              outline: "none",
-              border: "none",
-              margin: 0,
-              height: "6vh",
-              opacity: 0.5,
-            }}
-            onClick={() => setVisible(false)}
-          >
-            Register
-          </button>
         </Drawer>
         <button className="register">Register for free </button>
       </div>
