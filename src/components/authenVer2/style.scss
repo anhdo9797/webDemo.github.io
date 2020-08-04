@@ -225,7 +225,6 @@
       align-items: center;
       justify-content: space-between;
       a {
-        opacity: 0.6;
         font-size: 14px;
         font-weight: bold;
         color: black;
@@ -334,7 +333,6 @@
       align-items: center;
       justify-content: space-between;
       a {
-        opacity: 0.6;
         font-size: 14px;
         font-weight: bold;
         color: black;
@@ -343,7 +341,6 @@
       a:hover,
       a.focus {
         text-decoration: underline;
-        opacity: 1;
       }
       .menu {
         display: flex;
