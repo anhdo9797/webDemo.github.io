@@ -32,24 +32,24 @@ const menu = (
 );
 const menuUC = (
   <Menu>
-    <Menu.Item key="1">1st menu Uses cases</Menu.Item>
-    <Menu.Item key="2">2nd menu Uses cases</Menu.Item>
-    <Menu.Item key="3">3rd menu Uses cases</Menu.Item>
+    <Menu.Item key="4">1st menu Uses cases</Menu.Item>
+    <Menu.Item key="5">2nd menu Uses cases</Menu.Item>
+    <Menu.Item key="6">3rd menu Uses cases</Menu.Item>
   </Menu>
 );
 const menuD = (
   <Menu>
-    <Menu.Item key="1">1st menu Docs</Menu.Item>
-    <Menu.Item key="2">2nd menu Docs</Menu.Item>
-    <Menu.Item key="3">3rd menu Docs</Menu.Item>
+    <Menu.Item key="7">1st menu Docs</Menu.Item>
+    <Menu.Item key="8">2nd menu Docs</Menu.Item>
+    <Menu.Item key="9">3rd menu Docs</Menu.Item>
   </Menu>
 );
 
 const menuP = (
   <Menu>
-    <Menu.Item key="1">1st menu Pricing</Menu.Item>
-    <Menu.Item key="2">2nd menu Pricing</Menu.Item>
-    <Menu.Item key="3">3rd menu Pricing</Menu.Item>
+    <Menu.Item key="10">1st menu Pricing</Menu.Item>
+    <Menu.Item key="11">2nd menu Pricing</Menu.Item>
+    <Menu.Item key="12">3rd menu Pricing</Menu.Item>
   </Menu>
 );
 
@@ -57,7 +57,7 @@ const ItemNav = ({ overlay, label }) => {
   return (
     <Dropdown overlay={overlay}>
       <a>
-        {label} <DownOutlined />
+        {label} <DownOutlined style={{ marginLeft: 2 }} />
       </a>
     </Dropdown>
   );
@@ -171,7 +171,7 @@ const ChallengeV3 = () => {
                 easy
               </p>
               <button>
-                Get Started <RightOutlined />
+                Get Started <RightOutlined style={{ marginLeft: 3 }} />
               </button>
             </div>
             <div className="carousel">
