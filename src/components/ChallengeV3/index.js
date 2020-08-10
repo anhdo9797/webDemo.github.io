@@ -180,6 +180,8 @@ const ChallengeV3 = () => {
                   display: "flex",
                   justifyContent: "space-between ",
                   width: "93%",
+                  height: "100%",
+                  alignItems:'center'
                 }}
               >
                 {/*show 3 item for lap and desk  */}
