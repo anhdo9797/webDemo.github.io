@@ -8,11 +8,9 @@ import {
   LeftOutlined,
   RightOutlined,
   AlignRightOutlined,
+  SearchOutlined,
 } from "@ant-design/icons";
 import footer from "./assets/footer.png";
-
-// const ITEM_CAROUSEL =
-//   window.innerWidth > 1280 ? 5 : window.innerWidth < 600 ? 1 : 3;
 
 const Challenge4 = () => {
   const [startCarousel, setStart] = useState(2);
@@ -21,6 +19,7 @@ const Challenge4 = () => {
   );
   const [MEDIAN, setMedia] = useState(0);
   const [showMenu, setShow] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     window.innerWidth > 1280
@@ -51,6 +50,17 @@ const Challenge4 = () => {
     }
   };
 
+  const renderItem = (e, i) => (
+    <div className={"item"}>
+      <img src={e.src} />
+      <div className="maskCover" />
+      <div className="outer">
+        <p className="label">{e.label} </p>
+        <p className="title">{e.title} </p>
+      </div>
+    </div>
+  );
+
   return (
     <div className="containerV4">
       <div className="header">
@@ -62,8 +72,17 @@ const Challenge4 = () => {
           <a>ABOUT US</a>
           <a>BOOK</a>
         </nav>
-        <form>
-          <input placeholder="Search" className="search" />
+        <form className="search">
+          <input
+            placeholder="Search"
+            value={search}
+            onChange={(text) => setSearch(text.target.value)}
+          />
+          {search ? (
+            <button>
+              <SearchOutlined />
+            </button>
+          ) : null}
         </form>
         <div className="menuPhone">
           <button onClick={() => setShow(!showMenu)}>
@@ -78,8 +97,17 @@ const Challenge4 = () => {
           <a>TOUR</a>
           <a>ABOUT US</a>
           <a>BOOK</a>
-          <form>
-            <input placeholder="Search" className="search" />
+          <form className="search">
+            <input
+              placeholder="Search"
+              value={search}
+              onChange={(text) => setSearch(text.target.value)}
+            />
+            {search ? (
+              <button>
+                <SearchOutlined />
+              </button>
+            ) : null}
           </form>
         </div>
       ) : null}
@@ -88,24 +116,17 @@ const Challenge4 = () => {
         <h4 className="titleContent">
           Discover amazing places in Nigeria for your next destination
         </h4>
+
         <div className="carousel">
           <div className="left" style={{ width: (screen.width - 365) / 2 }}>
             {dataCarousel
               .slice(startCarousel, startCarousel + MEDIAN)
-              .map((e, i) => (
-                <div className={"item"}>
-                  <img src={e.src} />
-                  <div className="maskCover" />
-                  <div className="outer">
-                    <p className="label">{e.label} </p>
-                    <p className="title">{e.title} </p>
-                  </div>
-                </div>
-              ))}
+              .map((e, i) => renderItem(e, i))}
             <button onClick={leftClick}>
               <DoubleLeftOutlined className="icon" />
             </button>
           </div>
+
           <div className="itemActive">
             <img src={dataCarousel[startCarousel + MEDIAN].src} />
             <div className="maskCover" />
@@ -125,16 +146,7 @@ const Challenge4 = () => {
             </button>
             {dataCarousel
               .slice(startCarousel + MEDIAN + 1, startCarousel + ITEM_CAROUSEL)
-              .map((e, i) => (
-                <div className={"item"}>
-                  <img src={e.src} />
-                  <div className="maskCover" />
-                  <div className="outer">
-                    <p className="label">{e.label} </p>
-                    <p className="title">{e.title} </p>
-                  </div>
-                </div>
-              ))}
+              .map((e, i) => renderItem(e, i))}
           </div>
         </div>
       </div>

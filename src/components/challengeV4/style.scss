@@ -67,7 +67,18 @@
         outline: none;
         width: 100%;
         font-size: 14px;
-        margin-top: 10px;
+        justify-content: space-between;
+        display: flex;
+        input {
+          border: none;
+          outline: none;
+          width: 100%;
+        }
+        button {
+          background-color: transparent;
+          outline: none;
+          border: none;
+        }
       }
     }
     .content {
@@ -107,7 +118,7 @@
           display: flex;
           justify-content: flex-end;
           align-items: center;
-
+          z-index: 1;
           button {
             position: absolute;
             left: 0;
@@ -317,6 +328,7 @@
     }
   }
 }
+
 @media only screen and (min-width: 1280px) {
   .containerV4 {
     min-width: 100%;
@@ -338,7 +350,11 @@
       .menuPhone {
         display: none;
       }
+      .carouselPhone {
+        display: none;
+      }
       .nav {
+        display: flex;
         a {
           margin-right: 46px;
           font-size: 14px;
@@ -356,6 +372,18 @@
         outline: none;
         width: 264px;
         font-size: 14px;
+        justify-content: space-between;
+        display: flex;
+        input {
+          border: none;
+          outline: none;
+          width: 100%;
+        }
+        button {
+          background-color: transparent;
+          outline: none;
+          border: none;
+        }
       }
     }
     .content {
