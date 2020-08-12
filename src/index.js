@@ -21,8 +21,11 @@ export default function App() {
       <HashRouter>
         <div>
           <Switch>
-            <Route path="/" exact component={Challenge4} />
-            <Route path="/ver-2" component={AuthenticationVer22} />
+            <Route path="/" exact component={Authentication} />
+            <Route path="/1" component={AuthenticationVer2} />
+            <Route path="/2" component={AuthenticationVer22} />
+            <Route path="/3" component={ChallengeV3} />
+            <Route path="/4" component={Challenge4} />
           </Switch>
         </div>
       </HashRouter>

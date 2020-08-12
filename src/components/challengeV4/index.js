@@ -118,7 +118,11 @@ const Challenge4 = () => {
         </h4>
 
         <div className="carousel">
+          {/* list Item sẽ phụ thuộc vô chiều rộng màn, >128 => 5 item 
+        cái item active sẽ là item chính giữa MEDIAN */}
+
           <div className="left" style={{ width: (screen.width - 365) / 2 }}>
+            {/* lấy số phần tử từ start => trung vị */}
             {dataCarousel
               .slice(startCarousel, startCarousel + MEDIAN)
               .map((e, i) => renderItem(e, i))}
@@ -128,6 +132,7 @@ const Challenge4 = () => {
           </div>
 
           <div className="itemActive">
+            {/* item trung vị đc active */}
             <img src={dataCarousel[startCarousel + MEDIAN].src} />
             <div className="maskCover" />
             <div className="outer">
@@ -141,6 +146,7 @@ const Challenge4 = () => {
             </div>
           </div>
           <div className="right" style={{ width: (screen.width - 365) / 2 }}>
+            {/* từ trung vị đến hết số ITEM */}
             <button onClick={rightClick}>
               <DoubleRightOutlined className="icon" />
             </button>
