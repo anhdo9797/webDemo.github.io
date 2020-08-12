@@ -33,7 +33,7 @@ const Challenge4 = () => {
     console.log("====================================");
     console.log(ITEM_CAROUSEL, MEDIAN, window.innerWidth);
     console.log("====================================");
-  }, [window.innerWidth]);
+  });
 
   const rightClick = () => {
     if (startCarousel + ITEM_CAROUSEL < dataCarousel.length) {
@@ -65,13 +65,13 @@ const Challenge4 = () => {
     <div className="containerV4">
       <div className="header">
         <img className="logo" src={logo} />
-        <nav className="nav">
+        <div className="nav">
           <a>CITIES</a>
           <a>EXPLORE</a>
           <a>TOUR</a>
           <a>ABOUT US</a>
           <a>BOOK</a>
-        </nav>
+        </div>
         <form className="search">
           <input
             placeholder="Search"
